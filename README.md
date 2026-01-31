@@ -70,3 +70,29 @@ While General Relativity describes gravity as curved spacetime, the Gravity Cont
 ## License
 
 This is a theoretical physics concept open for academic discussion and development.
+
+## Repository Contents
+
+- **README.md**: This file - overview of the hypothesis
+- **THEORY.md**: Detailed theoretical foundation and mathematical framework
+- **COMPARISON.md**: Comparison with Newtonian gravity and General Relativity
+- **demo.py**: Python demonstration script showing the concept in 1D
+- **requirements.txt**: Python dependencies for the demo
+
+## Running the Demonstration
+
+To run the Python demonstration:
+
+```bash
+# Install dependencies (optional - demo works without them but won't generate plots)
+pip install -r requirements.txt
+
+# Run the demonstration
+python3 demo.py
+```
+
+The demonstration shows how local space contractions at each point lead to emergent gravitational behavior without any direct interaction between masses.
+
+## Key Takeaway
+
+**Gravity is not an interaction between objects.** It is a local contraction at each point in space, with objects following geodesics through the resulting geometry. This reframing eliminates the conceptual puzzle of "action at a distance" while remaining consistent with observational predictions.
