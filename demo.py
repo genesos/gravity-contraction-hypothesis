@@ -8,6 +8,11 @@ rather than interaction between objects.
 Requirements: numpy, matplotlib (install with: pip install -r requirements.txt)
 """
 
+# Physical constants
+SPEED_OF_LIGHT_M_S = 3e8  # Speed of light in m/s
+C_SQUARED = SPEED_OF_LIGHT_M_S ** 2  # c^2
+MIN_METRIC_FACTOR = 0.01  # Minimum metric factor to avoid numerical issues
+
 try:
     import numpy as np
     import matplotlib.pyplot as plt
@@ -32,7 +37,7 @@ except ImportError:
             return x ** 0.5
         
         @staticmethod
-        def max(x, y):
+        def maximum(x, y):
             return x if x > y else y
 
 
@@ -101,8 +106,8 @@ class LocalContractionField:
         for i in range(idx1, idx2):
             # Local metric factor (1 + contraction)
             # In contracted space, distances are modified
-            metric_factor = 1.0 + self.contraction[i] / (3e8**2)  # c^2 normalization
-            contracted_dist += self.dx * np.sqrt(max(0.01, metric_factor))
+            metric_factor = 1.0 + self.contraction[i] / C_SQUARED
+            contracted_dist += self.dx * np.sqrt(max(MIN_METRIC_FACTOR, metric_factor))
             
         return contracted_dist
     
